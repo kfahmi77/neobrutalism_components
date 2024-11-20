@@ -24,7 +24,7 @@ class NeoCardWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         border: Border.all(
-          color: NeoColors.primary,
+          color: theme.borderColor,
           width: theme.borderWidth,
         ),
         borderRadius: theme.borderRadius,

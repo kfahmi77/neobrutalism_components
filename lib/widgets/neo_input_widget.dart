@@ -4,19 +4,13 @@ import '../theme/neo_colors.dart';
 import '../theme/neo_themes.dart';
 
 class NeoInputWidget extends StatelessWidget {
-  final TextEditingController controller;
-  final String? hintText;
   final NeoThemeInterface theme;
-  final bool obscureText;
-  final String? Function(String?)? validator;
+  final TextFormField textFormField;
 
   const NeoInputWidget({
     super.key,
-    required this.controller,
-    this.hintText,
     required this.theme,
-    this.obscureText = false,
-    this.validator,
+    required this.textFormField,
   });
 
   @override
@@ -25,7 +19,7 @@ class NeoInputWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: NeoColors.secondary,
         border: Border.all(
-          color: NeoColors.primary,
+          color: theme.borderColor,
           width: theme.borderWidth,
         ),
         borderRadius: theme.borderRadius,
@@ -37,16 +31,7 @@ class NeoInputWidget extends StatelessWidget {
           ),
         ],
       ),
-      child: TextFormField(
-        controller: controller,
-        obscureText: obscureText,
-        validator: validator,
-        decoration: InputDecoration(
-          hintText: hintText,
-          border: InputBorder.none,
-          contentPadding: const EdgeInsets.all(16),
-        ),
-      ),
+      child: textFormField
     );
   }
 }

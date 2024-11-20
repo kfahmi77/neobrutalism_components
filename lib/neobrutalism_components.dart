@@ -1,7 +1,7 @@
 library neobrutalism_components;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export '/theme/neo_colors.dart';
+export '/theme/neo_themes.dart';
+export '/widgets/neo_button_widget.dart';
+export '/widgets/neo_card_widget.dart';
+export '/widgets/neo_input_widget.dart';
